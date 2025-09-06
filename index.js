@@ -1,23 +1,37 @@
 const fs = require("fs");
 const path = require("path");
+const login = require("facebook-chat-api");
 
-// Commands folder path updated to 'Wasi'
-const commandsPath = path.join(__dirname, "Wasi");
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith(".js"));
+// Load your AppState JSON file
+const appState = require("./appstate.json");
 
-const commands = [];
+login({ appState: appState }, (err, api) => {
+  if (err) return console.error("Login failed:", err);
 
-for (const file of commandFiles) {
-  const command = require(`./Wasi/${file}`);
-  commands.push(command);
-}
+  console.log("Messenger bot logged in with AppState!");
 
-// Example: Execute a command
-const fakeMessage = {
-  channel: { send: console.log }
-};
+  // Load commands
+  const commandsPath = path.join(__dirname, "commands");
+  const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith(".js"));
 
-const args = [];
-commands.forEach(cmd => {
-  if(cmd.name === "ping") cmd.execute(fakeMessage, args);
+  const commands = [];
+  for (const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+    commands.push(command);
+  }
+
+  // Listen for messages
+  api.listenMqtt(async (err, event) => {
+    if (err) return console.error(err);
+
+    if (event.type === "message" && event.body) {
+      const msg = event.body.toLowerCase();
+
+      for (const cmd of commands) {
+        if (msg.startsWith(cmd.name)) {
+          await cmd.execute(event, api, commands);
+        }
+      }
+    }
+  });
 });
