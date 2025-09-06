@@ -1,0 +1,17 @@
+{
+  "name": "waseem-bot",
+  "version": "1.0.0",
+  "description": "Facebook Messenger Bot by Waseem Abbasi with commands, events, anti-bad words, welcome/goodbye, namaz reminder & owner control",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Waseem Abbasi",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cron": "^2.3.0",
+    "fs-extra": "^11.1.1",
+    "moment": "^2.30.0"
+  }
+}
