@@ -1,0 +1,150 @@
+{
+  "language": "en",
+  "keyActive": "",
+  "DeveloperMode": false,
+  "autoCreateDB": true,
+  "notiGroup": true,
+  "NOTIFICATION": true,
+  "allowInbox": false,
+  "autoClean": true,
+
+  "commandDisabled": [
+    "sim.js"
+  ],
+  "eventDisabled": [
+    "join.js"
+  ],
+
+  "EMAIL": "",
+  "PASSWORD": "",
+  "OTPKEY": "",
+
+  "BOTNAME": "Waseem-Bot",
+  "PREFIX": "$",
+
+  "ADMINBOT": [
+    "100091680625364"
+  ],
+  "NDH": [
+    "100091680625364"
+  ],
+
+  "DATABASE": {
+    "sqlite": {
+      "storage": "data.sqlite"
+    }
+  },
+
+  "APPSTATEPATH": "appstate.json",
+
+  "FCAOption": {
+    "forceLogin": true,
+    "listenEvents": true,
+    "pauseLog": true,
+    "logLevel": "error",
+    "selfListen": false,
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Mobile/15E148 Safari/604.1"
+  },
+
+  "version": "1.0.0",
+
+  "cooldowns": {
+    "daily": 43200000,
+    "work": 1200000,
+    "cave": 2000000,
+    "diemdanh": 3000000,
+    "anime": 1200000,
+    "fish": 1000000,
+    "job": 5000,
+    "lixi": 1100000
+  },
+
+  "apis": {
+    "weather": {
+      "OPEN_WEATHER": "your_api_here"
+    },
+    "gif": {
+      "TENOR": "your_api_here"
+    },
+    "instagram": {
+      "APIKEY": "your_api_here"
+    },
+    "math": {
+      "WOLFRAM": "your_api_here"
+    },
+    "soundcloud": {
+      "SOUNDCLOUD_API": "your_api_here"
+    },
+    "youtube": {
+      "YOUTUBE_API": "your_api_here"
+    },
+    "tiktok": {
+      "API_KEY": "your_api_here"
+    },
+    "shortlink": {
+      "bitlyAPI": "your_api_here"
+    },
+    "sauce": {
+      "SAUCENAO_API": "your_api_here"
+    },
+    "sim": {
+      "APIKEY": "your_api_here"
+    },
+    "rname": {
+      "APIKEY": "your_api_here"
+    },
+    "ifb": {
+      "key": "your_api_here",
+      "token": "your_token_here"
+    },
+    "fbcover": {
+      "APIKEY": "your_api_here"
+    }
+  },
+
+  "features": {
+    "WELCOME": true,
+    "GOODBYE": true,
+    "ANTIBAD": true,
+    "NAMAZ_REMINDER": true,
+    "ENABLE_BOT": true,
+    "adminOnly": false,
+    "ndhOnly": false,
+    "adminPaOnly": false
+  },
+
+  "menu": {
+    "autoUnsend": true,
+    "delayUnsend": 55
+  },
+
+  "rankup": {
+    "autoUnsend": true,
+    "unsendMessageAfter": 10
+  },
+
+  "help": {
+    "autoUnsend": true,
+    "delayUnsend": 120
+  },
+
+  "help2": {
+    "autoUnsend": true,
+    "delayUnsend": 300
+  },
+
+  "help3": {
+    "autoUnsend": true,
+    "delayUnsend": 300
+  },
+
+  "adminUpdate": {
+    "autoUnsend": true,
+    "sendNoti": true,
+    "timeToUnsend": 10
+  },
+
+  "log": {
+    "enable": true
+  }
+}
